@@ -51,7 +51,7 @@ jobs:
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
         python -m pip install --upgrade pip
-        pip install hashlib numpy
+        pip install numpy
         git clone https://github.com/albertobsd/ecctools.git
         sudo apt-get install -y libgcrypt20 libgcrypt20-dev
         sudo apt-get install -y libgmp-dev
