@@ -51,9 +51,12 @@ jobs:
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
         python -m pip install --upgrade pip
+        pip install subprocess
+        pip install concurrent
+        pip install hashlib numpy
         git clone https://github.com/albertobsd/ecctools.git
-        apt-get install -y libgcrypt20 libgcrypt20-dev
-        apt-get install -y libgmp-dev
+        sudo apt-get install -y libgcrypt20 libgcrypt20-dev
+        sudo apt-get install -y libgmp-dev
         cd ecctools && make
         popd
 
